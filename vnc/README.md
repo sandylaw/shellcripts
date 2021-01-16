@@ -1,6 +1,6 @@
 ```
 date: 2021-01-16T15:21:30+08:00
-autuor: SandyLaw
+author: SandyLaw
 email: freelxs at gmail.com
 ```
 
