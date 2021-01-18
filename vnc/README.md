@@ -21,13 +21,14 @@ vncserver的密码设置工具。 vncserver服务程序没有设置密码将不�
 告诉 vncserver连接到远程一个运行vncviewer的 计算机的IP和端口号。这样我就可以避免给其他人一个接入的密码。 
 
 **VNC工作流程**
-（1） 在服务器端启动 VNC Server。
-（2） VNC客户端通过浏览器或 VNC Viewer 连接至VNC Server。
-（3） VNC Server传送一对话窗口至客户端，要求输入连接密码， 以及存取的VNC Server显示装置。
-（4） 在客户端输入联机密码后，VNC Server验证客户端是否具有存取权限。
-（5） 若是客户端通过 VNC Server 的验证，客户端即要求VNC Server显示桌面环境。
-（6） VNC Server通过X Protocol 要求X Server将画面显示控制权交由VNC Server负责。
-（7） VNC Server将来由 X Server 的桌面环境利用VNC通信协议送至客户端， 并且允许客户端控制VNC Server的桌面环境及输入装置。 
+
+- （1） 在服务器端启动 VNC Server。
+- （2） VNC客户端通过浏览器或 VNC Viewer 连接至VNC Server。
+- （3） VNC Server传送一对话窗口至客户端，要求输入连接密码， 以及存取的VNC Server显示装置。
+- （4） 在客户端输入联机密码后，VNC Server验证客户端是否具有存取权限。
+- （5） 若是客户端通过 VNC Server 的验证，客户端即要求VNC Server显示桌面环境。
+- （6） VNC Server通过X Protocol 要求X Server将画面显示控制权交由VNC Server负责。
+- （7） VNC Server将来由 X Server 的桌面环境利用VNC通信协议送至客户端， 并且允许客户端控制VNC Server的桌面环境及输入装置。 
 
 本文将使用[TightVNC](https://www.tightvnc.com/)在Debian系上创建VNCServer以及如何使用VNCViewer通过SSH隧道连接VNCServer。
 
@@ -169,7 +170,7 @@ ssh -L 6901:localhost:5901 -C -N -l sandy your_server_ip
 
 其他参数的含义：
 
-- `-L 一共接受三个值，分别是"本地端口:目标主机:目标主机端口"，它们之间用冒号分隔。
+- `-L` 一共接受三个值，分别是"本地端口:目标主机:目标主机端口"，它们之间用冒号分隔。
 - `-C`: 启用压缩。
 - `-N`:不执行远程命令。
 - `-l sandy your_server_ip`: `-l`后面直接跟的是远程Server主机的登录用户名。
